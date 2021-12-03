@@ -11,6 +11,9 @@ from nltk.lm.preprocessing import padded_everygram_pipeline, pad_both_ends
 from nltk.lm.models import MLE, KneserNeyInterpolated
 from nltk import ngrams
 
+# get start and end dates for each model
+ranges = [(year, year+100) for year in range(1600, 1800, 50)]
+
 
 if __name__ == '__main__':
     import argparse
@@ -24,8 +27,6 @@ if __name__ == '__main__':
     if not os.path.isdir(args.output_dir):
         os.makedirs(args.output_dir)
 
-    # get start and end dates for each model
-    ranges = [(year, year+100) for year in range(1600, 1800, 50)]
 
     decades = collections.defaultdict(list)
     for f in glob.glob(os.path.join(args.dbnl, '[0-9]*.txt')):
