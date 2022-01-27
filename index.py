@@ -9,9 +9,6 @@ import pickle as pkl
 from joblib import Parallel, delayed
 import multiprocessing
 
-from nltk import ngrams
-from nltk.lm.preprocessing import pad_both_ends
-
 import random
 random.seed(1001)
 
